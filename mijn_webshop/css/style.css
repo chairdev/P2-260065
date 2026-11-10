@@ -103,3 +103,168 @@ footer {
     color: #c4d7a5;
     text-align: center;
 }
+
+.detail-page {
+    min-height: calc(100vh - 190px);
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 24px;
+    color: #c4d7a5;
+}
+
+.product-detail {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+    gap: 48px;
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: #c4d7a5;
+    color: #1d3325;
+}
+
+.product-image-panel {
+    position: relative;
+}
+
+.product-image-panel img {
+    display: block;
+    width: 100%;
+    height: min(460px, 55vw);
+    min-height: 300px;
+    object-fit: cover;
+}
+
+.condition-badge {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    padding: 8px 12px;
+    background-color: #1d3325;
+    color: #c4d7a5;
+    font-family: "Ari W9500 Condensed", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.eyebrow {
+    margin: 4px 0 12px;
+    color: #345b3a;
+    font-family: "Ari W9500 Condensed", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.product-info h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 0.95;
+}
+
+.detail-price {
+    margin: 24px 0 16px;
+    color: #345b3a;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.intro {
+    max-width: 55ch;
+    line-height: 1.6;
+}
+
+.product-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 28px 0;
+    padding: 18px 0;
+    border-top: 1px solid #789461;
+    border-bottom: 1px solid #789461;
+}
+
+.product-specs dt {
+    margin-bottom: 4px;
+    color: #345b3a;
+    font-family: "Ari W9500 Condensed", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.product-specs dd {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.stock-status {
+    margin: 0 0 14px;
+    color: #345b3a;
+    font-weight: 700;
+}
+
+.stock-status span {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background-color: #345b3a;
+}
+
+button {
+    border: 0;
+    padding: 14px 22px;
+    background-color: #1d3325;
+    color: #c4d7a5;
+    font: 700 1rem "Ari W9500", sans-serif;
+    cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+    background-color: #345b3a;
+}
+
+.description {
+    max-width: 1050px;
+    margin: 36px auto 0;
+    padding: 0 32px 16px;
+    color: #c4d7a5;
+}
+
+.description h2 {
+    margin-bottom: 8px;
+}
+
+.description p {
+    max-width: 65ch;
+    line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+    .product-detail {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 20px;
+    }
+
+    .product-image-panel img {
+        height: 80vw;
+        min-height: 260px;
+    }
+
+    .product-specs {
+        gap: 8px;
+    }
+
+    .description {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}

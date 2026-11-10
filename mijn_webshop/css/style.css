@@ -1,11 +1,53 @@
+@font-face {
+    font-family: "Ari W9500";
+    src: url("../fonts/ari-w9500.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ari W9500";
+    src: url("../fonts/ari-w9500-bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ari W9500 Condensed";
+    src: url("../fonts/ari-w9500-condensed.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Ari W9500 Condensed";
+    src: url("../fonts/ari-w9500-condensed-bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: "Ari W9500", sans-serif;
+    color: #1d3325;
+    background-color: #c4d7a5;
+}
+
+h1,
+h2,
+nav {
+    font-family: "Ari W9500 Condensed", sans-serif;
+}
+
+h1,
+h2 {
+    font-weight: 700;
 }
 
 header {
     padding: 20px;
-    background-color: #dae0ea;
+    background-color: #1d3325;
+    color: #c4d7a5;
 }
 
 nav ul {
@@ -20,7 +62,7 @@ nav li {
 
 main {
     padding: 20px;
-    background-color: #b3b9d1;
+    background-color: #789461;
 }
 
 .product-grid {
@@ -31,7 +73,8 @@ main {
 
 .product-card {
     padding: 15px;
-    background-color: #ffffff;
+    background-color: #c4d7a5;
+    color: #1d3325;
 }
 
 .product-card img {
@@ -42,10 +85,17 @@ main {
 
 .price {
     font-weight: bold;
+    color: #345b3a;
+}
+
+a {
+    color: #1d3325;
+    font-weight: bold;
 }
 
 footer {
     padding: 20px;
-    background-color: #8b93af;
+    background-color: #345b3a;
+    color: #c4d7a5;
     text-align: center;
 }

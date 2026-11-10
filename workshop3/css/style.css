@@ -1,14 +1,14 @@
 #header {
-    background-color: #f2f2f2;
-    height: 100px;
+    background-color: #dae0ea;
+    height: 80px;
 }
 
 #content {
-    background-color: #c9c9c9;
-    height: 400px;
+    background-color: #b3b9d1;
+    height: 500px;
 }
 
 #footer {
-    background-color: #b3b3b3;
-    height: 100px;
+    background-color: #8b93af;
+    height: 60px;
 }

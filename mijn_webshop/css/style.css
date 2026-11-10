@@ -93,6 +93,10 @@ a {
     font-weight: bold;
 }
 
+header a {
+    color: #c4d7a5;
+}
+
 footer {
     padding: 20px;
     background-color: #345b3a;

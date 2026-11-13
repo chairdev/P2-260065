@@ -226,8 +226,18 @@ button {
     cursor: pointer;
 }
 
+.product-card a {
+    display: inline-block;
+    padding: 14px 22px;
+    background-color: #1d3325;
+    color: #c4d7a5;
+    text-decoration: none;
+}
+
 button:hover,
-button:focus-visible {
+.product-card a:hover,
+button:focus-visible,
+.product-card a:focus-visible {
     background-color: #345b3a;
 }
 

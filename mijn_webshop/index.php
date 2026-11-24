@@ -8,16 +8,7 @@
 </head>
 <body>
     <div id="container">
-        <header>
-            <h1>Re:Play Station</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Producten</a></li>
-                    <li><a href="#">Over ons</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+        <?php require __DIR__ . '/includes/header.php'; ?>
 
         <main>
             <h2>Onze producten</h2>
@@ -33,35 +24,35 @@
                         <img src="images/dreamcast.jpg" alt="Sega Dreamcast Wit">
                         <h2>Sega Dreamcast (Wit)</h2>
                         <p class="price">&euro; 129,99</p>
-                        <a href="detail.html">Bekijk</a>
+                        <a href="detail.php">Bekijk</a>
                     </div>
 
                     <div class="product-card">
                         <img src="images/lifeline.jpg" alt="Lifeline (PS2)">
                         <h2>Lifeline (PS2)</h2>
                         <p class="price">&euro; 89,99</p>
-                        <a href="detail.html">Bekijk</a>
+                        <a href="detail.php">Bekijk</a>
                     </div>
 
                     <div class="product-card">
                         <img src="images/gba.jpg" alt="Nintendo Game Boy Advance (Paars)">
                         <h2>Nintendo Game Boy Advance (Paars)</h2>
                         <p class="price">&euro; 99,99</p>
-                        <a href="detail.html">Bekijk</a>
+                        <a href="detail.php">Bekijk</a>
                     </div>
 
                     <div class="product-card">
                         <img src="images/mmbn6.jpg" alt="Mega Man Battle Network 6: Cybeast Gregar (GBA)">
                         <h2>Mega Man Battle Network 6: Cybeast Gregar (GBA)</h2>
                         <p class="price">&euro; 49,99</p>
-                        <a href="detail.html">Bekijk</a>
+                        <a href="detail.php">Bekijk</a>
                     </div>
 
                     <div class="product-card">
                         <img src="images/beast-link-gate.jpg" alt="RockMan.EXE Beast Link Gate">
                         <h2>RockMan.EXE Beast Link Gate</h2>
                         <p class="price">&euro; 139,99</p>
-                        <a href="detail.html">Bekijk</a>
+                        <a href="detail.php">Bekijk</a>
                     </div>
                 </div>
         </main>

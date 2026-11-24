@@ -8,16 +8,7 @@
 </head>
 <body>
     <div id="container">
-        <header>
-            <h1>Re:Play Station</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Producten</a></li>
-                    <li><a href="#">Over ons</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+        <?php require __DIR__ . '/includes/header.php'; ?>
 
         <main>
             <h2>Bestellen</h2>

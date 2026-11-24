@@ -8,19 +8,10 @@
 </head>
 <body>
     <div id="container">
-        <header>
-            <h1>Re:Play Station</h1>
-            <nav aria-label="Hoofdnavigatie">
-                <ul>
-                    <li><a href="index.html">Producten</a></li>
-                    <li><a href="#">Over ons</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+        <?php require __DIR__ . '/includes/header.php'; ?>
 
         <main class="detail-page">
-            <a class="back-link" href="index.html">&larr; Terug naar alle producten</a>
+            <a class="back-link" href="index.php">&larr; Terug naar alle producten</a>
 
             <article class="product-detail">
                 <div class="product-image-panel">

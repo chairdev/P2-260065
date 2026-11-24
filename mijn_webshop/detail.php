@@ -62,9 +62,7 @@
             </section>
         </main>
 
-        <footer>
-            &copy; 2026 Re:Play Station
-        </footer>
+        <?php require __DIR__ . '/includes/footer.php'; ?>
     </div>
 </body>
 </html>

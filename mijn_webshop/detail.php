@@ -8,41 +8,54 @@
 </head>
 <body>
     <div id="container">
-        <?php require __DIR__ . '/includes/header.php'; ?>
+        <?php
+            include "includes/db.php";
+            include "includes/header.php";
+    
+            // Get id parameter from URL
+            $id = $_GET['id'] ?? null;
+
+            $product = $pdo->query("SELECT * FROM producten WHERE id = $id")->fetch();
+        ?>
 
         <main class="detail-page">
             <a class="back-link" href="index.php">&larr; Terug naar alle producten</a>
 
             <article class="product-detail">
                 <div class="product-image-panel">
-                    <img src="images/mmbn6.jpg" alt="Mega Man Battle Network 6: Cybeast Gregar voor Game Boy Advance">
-                    <span class="condition-badge">Zeer goede staat</span>
+                    <?php
+
+                        if ($product) {
+                            echo '<img src="images/' . $product['afbeelding'] . '" alt="' . $product['naam'] . '">';
+                            echo '<span class="condition-badge">' . $product['conditie'] . '</span>';
+                        }
+                    ?>
                 </div>
 
                 <div class="product-info">
-                    <p class="eyebrow">Game Boy Advance &middot; Capcom</p>
-                    <h2>Mega Man Battle Network 6:<br>Cybeast Gregar</h2>
-                    <p class="detail-price">&euro; 49,99</p>
-                    <p class="intro">
-                        In het laatste deel van het Mega Man Battle Network™
-                        moeten Lan en Mega Man.EXE het opnemen tegen Gregar,
-                        een eeuwenoud wezen dat in de vorm van een wolf dood en verderf zaait op het internet.
-                    </p>
-
-                    <dl class="product-specs">
-                        <div>
-                            <dt>Platform</dt>
-                            <dd>Game Boy Advance</dd>
-                        </div>
-                        <div>
-                            <dt>Uitgever</dt>
-                            <dd>Capcom</dd>
-                        </div>
-                        <div>
-                            <dt>Regio</dt>
-                            <dd>NTSC-U</dd>
-                        </div>
-                    </dl>
+                    <?php
+                        if ($product) {
+                            echo '<p class="eyebrow">' . $product['platform'] . ' &middot; ' . $product['uitgever'] . '</p>';
+                            echo '<h2>' . $product['naam'] . '</h2>';
+                            echo '<p class="detail-price">&euro; ' . number_format($product['prijs'], 2, ',', '.') . '</p>';
+                            echo '<p class="intro">' . $product['omschrijving'] . '</p>';
+                            
+                             echo '<dl class="product-specs">
+                                <div>
+                                    <dt>Platform</dt>
+                                    <dd>' . $product['platform'] . '</dd>
+                                </div>
+                                <div>
+                                    <dt>Uitgever</dt>
+                                    <dd>' . $product['uitgever'] . '</dd>
+                                </div>
+                                <div>
+                                    <dt>Regio</dt>
+                                    <dd>' . $product['regio'] . '</dd>
+                                </div>
+                            </dl>';
+                            }
+                    ?>
 
                     <div class="purchase-area">
                         <p class="stock-status"><span aria-hidden="true"></span> Op voorraad</p>
@@ -62,7 +75,9 @@
             </section>
         </main>
 
-        <?php require __DIR__ . '/includes/footer.php'; ?>
+        <footer>
+            &copy; 2026 Re:Play Station
+        </footer>
     </div>
 </body>
 </html>

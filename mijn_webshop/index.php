@@ -8,52 +8,24 @@
 </head>
 <body>
     <div id="container">
-        <?php require __DIR__ . '/includes/header.php'; ?>
+       <?php
+            require __DIR__ . '/includes/header.php';
+            require __DIR__ . '/includes/db.php';
+
+            $producten = $pdo->query("SELECT * FROM producten")->fetchAll();
+        ?>
 
         <main>
             <h2>Onze producten</h2>
                 <div class="product-grid">
-                    <div class="product-card">
-                        <img src="images/psp.jpg" alt="Sony PSP-1000 Zwart">
-                        <h2>Sony PSP-1000 (Zwart)</h2>
-                        <p class="price">&euro; 149,99</p>
-                        <a href="#">Bekijk</a>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="images/dreamcast.jpg" alt="Sega Dreamcast Wit">
-                        <h2>Sega Dreamcast (Wit)</h2>
-                        <p class="price">&euro; 129,99</p>
-                        <a href="detail.php">Bekijk</a>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="images/lifeline.jpg" alt="Lifeline (PS2)">
-                        <h2>Lifeline (PS2)</h2>
-                        <p class="price">&euro; 89,99</p>
-                        <a href="detail.php">Bekijk</a>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="images/gba.jpg" alt="Nintendo Game Boy Advance (Paars)">
-                        <h2>Nintendo Game Boy Advance (Paars)</h2>
-                        <p class="price">&euro; 99,99</p>
-                        <a href="detail.php">Bekijk</a>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="images/mmbn6.jpg" alt="Mega Man Battle Network 6: Cybeast Gregar (GBA)">
-                        <h2>Mega Man Battle Network 6: Cybeast Gregar (GBA)</h2>
-                        <p class="price">&euro; 49,99</p>
-                        <a href="detail.php">Bekijk</a>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="images/beast-link-gate.jpg" alt="RockMan.EXE Beast Link Gate">
-                        <h2>RockMan.EXE Beast Link Gate</h2>
-                        <p class="price">&euro; 139,99</p>
-                        <a href="detail.php">Bekijk</a>
-                    </div>
+                    <?php foreach ($producten as $product) { ?>
+                        <div class="product-card">
+                            <img src="images/<?php echo $product['afbeelding']; ?>" alt="<?php echo $product['naam']; ?>">
+                            <h2><?php echo $product['naam']; ?></h2>
+                            <p class="price">&euro; <?php echo number_format($product['prijs'], 2, ',', '.'); ?></p>
+                            <a href="detail.php?id=<?php echo $product['id']; ?>">Bekijk</a>
+                        </div>
+                    <?php } ?>
                 </div>
         </main>
 

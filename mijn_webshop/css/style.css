@@ -106,8 +106,22 @@ a {
     font-weight: bold;
 }
 
-header a {
-    color: #c4d7a5;
+header nav a {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #c4d7a5;
+    color: #1d3325;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    background-color: #ffffff;
+}
+
+header nav a:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
 }
 
 footer {

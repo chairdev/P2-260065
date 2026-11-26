@@ -98,6 +98,7 @@ $total = 0;
                                 <div class="cart-item-info">
                                     <h3><?php echo htmlspecialchars($product['naam'], ENT_QUOTES, 'UTF-8'); ?></h3>
                                     <p>&euro; <?php echo number_format($product['prijs'], 2, ',', '.'); ?> per stuk</p>
+                                    <a href="detail.php?id=<?php echo (int) $id; ?>" class="cart-item-link">Bekijk product</a>
                                 </div>
                                 <label class="cart-quantity">
                                     Aantal

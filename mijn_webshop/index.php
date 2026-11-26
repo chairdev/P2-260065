@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    require __DIR__ . '/includes/db.php';
+
+    $producten = $pdo->query("SELECT * FROM producten")->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -8,13 +14,7 @@
 </head>
 <body>
     <div id="container">
-       <?php
-            require __DIR__ . '/includes/header.php';
-            require __DIR__ . '/includes/db.php';
-
-            $producten = $pdo->query("SELECT * FROM producten")->fetchAll();
-        ?>
-
+        <?php require __DIR__ . '/includes/header.php'; ?>
         <main>
             <h2>Onze producten</h2>
                 <div class="product-grid">

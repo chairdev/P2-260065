@@ -1,3 +1,15 @@
+<?php
+    session_start();
+    require __DIR__ . '/includes/db.php';
+
+    $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+    $product = false;
+    if ($id !== false && $id !== null && $id > 0) {
+        $statement = $pdo->prepare('SELECT * FROM producten WHERE id = :id');
+        $statement->execute(['id' => $id]);
+        $product = $statement->fetch();
+    }
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -9,13 +21,7 @@
 <body>
     <div id="container">
         <?php
-            include "includes/db.php";
-            include "includes/header.php";
-    
-            // Get id parameter from URL
-            $id = $_GET['id'] ?? null;
-
-            $product = $pdo->query("SELECT * FROM producten WHERE id = $id")->fetch();
+            include __DIR__ . '/includes/header.php';
         ?>
 
         <main class="detail-page">
@@ -64,7 +70,11 @@
                                 $vooraad = $product['voorraad'];
                                 if ($vooraad > 0) {
                                     echo '<p class="stock-status"><span aria-hidden="true"></span> Op voorraad (' . $vooraad . ' beschikbaar)</p>';
-                                    echo '<button type="button">Toevoegen aan winkelmand</button>';
+                                    echo '<form action="cart.php" method="post">
+                                        <input type="hidden" name="action" value="add">
+                                        <input type="hidden" name="product_id" value="' . (int) $product['id'] . '">
+                                        <button type="submit">Toevoegen aan winkelwagen</button>
+                                    </form>';
                                 } else {
                                     echo '<p class="stock-status out-of-stock"><span aria-hidden="true"></span> Niet op voorraad</p>';
                                 }

@@ -38,7 +38,7 @@
                             echo '<p class="eyebrow">' . $product['platform'] . ' &middot; ' . $product['uitgever'] . '</p>';
                             echo '<h2>' . $product['naam'] . '</h2>';
                             echo '<p class="detail-price">&euro; ' . number_format($product['prijs'], 2, ',', '.') . '</p>';
-                            echo '<p class="intro">' . $product['omschrijving'] . '</p>';
+                            echo '<p class="intro">' . $product['uitgebreide_omschrijving'] . '</p>';
                             
                              echo '<dl class="product-specs">
                                 <div>
@@ -66,12 +66,11 @@
 
             <section class="description">
                 <h2>Over dit product</h2>
-                <p>
-                    Mega Man Battle Network 6 introduceert allerlei nieuwe spelelementen zoals het Beast Out System,
-                    waarmee je de krachten van Gregar absorbeert om fantastische vermogens te creëren,
-                    en het Cross Change System, waarin je Link Navi's moet verslaan en speciale vaardigheden krijgt.
-                    Als je de twee combineert, kun je nog krachtiger worden, maar ga verstandig om met al deze kracht!
-                </p>
+                <?php
+                    if ($product) {
+                        echo '<p>' . $product['omschrijving'] . '</p>';
+                    }
+                ?>
             </section>
         </main>
 

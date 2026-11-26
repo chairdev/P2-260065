@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mega Man Battle Network 6 | Re:Play Station</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=<?= filemtime(__DIR__ . '/css/style.css') ?>">
 </head>
 <body>
     <div id="container">
@@ -58,8 +58,18 @@
                     ?>
 
                     <div class="purchase-area">
-                        <p class="stock-status"><span aria-hidden="true"></span> Op voorraad</p>
-                        <button type="button">Toevoegen aan winkelmand</button>
+                        <?php
+                        // Check if the product exists and display stock status and button accordingly
+                            if($product) {
+                                $vooraad = $product['voorraad'];
+                                if ($vooraad > 0) {
+                                    echo '<p class="stock-status"><span aria-hidden="true"></span> Op voorraad</p>';
+                                    echo '<button type="button">Toevoegen aan winkelmand</button>';
+                                } else {
+                                    echo '<p class="stock-status out-of-stock"><span aria-hidden="true"></span> Niet op voorraad</p>';
+                                }
+                            }
+                        ?>
                     </div>
                 </div>
             </article>

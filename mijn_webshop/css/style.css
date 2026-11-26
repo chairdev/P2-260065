@@ -233,6 +233,10 @@ footer {
     font-weight: 700;
 }
 
+.stock-status.out-of-stock {
+    color: #5b3434;
+}
+
 .stock-status span {
     display: inline-block;
     width: 9px;
@@ -240,6 +244,10 @@ footer {
     margin-right: 7px;
     border-radius: 50%;
     background-color: #345b3a;
+}
+
+.stock-status.out-of-stock span {
+    background-color: #5b3434;
 }
 
 button {
@@ -307,6 +315,3 @@ button:focus-visible,
         padding-left: 20px;
     }
 }
-
-
-

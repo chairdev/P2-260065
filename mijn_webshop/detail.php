@@ -63,7 +63,7 @@
                             if($product) {
                                 $vooraad = $product['voorraad'];
                                 if ($vooraad > 0) {
-                                    echo '<p class="stock-status"><span aria-hidden="true"></span> Op voorraad</p>';
+                                    echo '<p class="stock-status"><span aria-hidden="true"></span> Op voorraad (' . $vooraad . ' beschikbaar)</p>';
                                     echo '<button type="button">Toevoegen aan winkelmand</button>';
                                 } else {
                                     echo '<p class="stock-status out-of-stock"><span aria-hidden="true"></span> Niet op voorraad</p>';
